@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGRI-PAL — Autonomous Field Robot</title>
+  <meta name="description" content="Agri-Pal is an autonomous line-following, obstacle-avoiding, crop-harvesting field robot. Explore the design, the build and the live status." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="top" data-page="home">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVBAR: floating pill ============ -->
+  <header class="site-nav" id="site-nav">
+    <a class="nav-logo" href="#top" data-modal="home">
+      <svg class="nav-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="12" />
+        <circle cx="16" cy="16" r="5" fill="#0d1014" />
+      </svg>
+      <span class="nav-name">Agri-Pal</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#top" data-modal="home">Home</a>
+<a href="#" data-modal="components">Components</a>
+      <a href="#specs" data-modal="specs">Specs</a>
+      <a href="#live" data-modal="status">Live Status</a>
+    </nav>
+    <a class="nav-cta" href="mailto:hello@agripal.xyz">Get in touch</a>
+    <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 1 · HERO / MOODBOARD ============ -->
+    <section class="hero moodboard">
+      <div class="mg-blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+
+      <p class="kicker">Autonomous / Field Robot</p>
+
+      <div class="wordmark-wrap">
+        <!-- hand-drawn accents -->
+        <svg class="doodle swirl" viewBox="0 0 120 90" fill="none" aria-hidden="true">
+          <path d="M84 6c26 8 6 42-20 32C40 28 16 46 26 68c8 18 44 14 58-4" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <svg class="doodle aster" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+          <path d="M30 2v56M2 30h56M10 10l40 40M50 10L10 50" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <h1 class="wordmark">Agri-Pal</h1>
+        <svg class="doodle squiggle" viewBox="0 0 220 18" fill="none" aria-hidden="true">
+          <path d="M2 12c18-10 30-10 44 0s26 10 44 0 30-10 44 0 26 10 42 2" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <p class="tagline">Autonomous line-following, obstacle-avoiding, crop-harvesting robot.</p>
+
+      <!-- scattered photo thumbnails -->
+      <div class="thumb-cloud" aria-hidden="false">
+        <figure class="thumb t1">
+          <div class="thumb-img"><img src="assets/moodboard/thumb-robot-face.jpg" alt="Agri-Pal robot face detail" loading="lazy" width="320" height="240"/></div>
+          <figcaption class="thumb-caption">Robot face</figcaption>
+        </figure>
+        <figure class="thumb t2">
+          <div class="thumb-img"><img src="assets/moodboard/thumb-pcb-electronics.jpg" alt="PCB electronics close-up" loading="lazy" width="320" height="240"/></div>
+          <figcaption class="thumb-caption">Control board</figcaption>
+        </figure>
+        <figure class="thumb t3">
+          <div class="thumb-img"><img src="assets/moodboard/thumb-crop-rows.jpg" alt="Crop rows in a field" loading="lazy" width="320" height="240"/></div>
+          <figcaption class="thumb-caption">Field rows</figcaption>
+        </figure>
+        <figure class="thumb t4">
+          <div class="thumb-img"><img src="assets/moodboard/thumb-assembly-line.jpg" alt="Assembly line workshop" loading="lazy" width="320" height="240"/></div>
+          <figcaption class="thumb-caption">Assembly line</figcaption>
+        </figure>
+        <figure class="thumb t5">
+          <div class="thumb-img"><img src="assets/moodboard/thumb-seedlings.jpg" alt="Young seedlings sprouting" loading="lazy" width="320" height="240"/></div>
+          <figcaption class="thumb-caption">Seedlings</figcaption>
+        </figure>
+      </div>
+
+      <a class="discover" href="#assembly" aria-label="Discover the assembly">
+        <span>Discover</span>
+        <span class="cue-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============ 2 · ASSEMBLY SHOWCASE ============ -->
+    <section id="assembly" class="asc-section">
+      <div class="asc-track" id="asc-track">
+        <div class="asc-stage" id="asc-stage">
+          <canvas id="bot-canvas" class="assembly-canvas" aria-label="Assembly animation — scroll to assemble the bot"></canvas>
+
+          <div class="asc-loader" id="asc-loader" role="status" aria-live="polite">
+            <span class="spinner" aria-hidden="true"></span>
+            <span id="asc-loader-label">Loading render frames…</span>
+          </div>
+
+          <p class="asc-caption" id="asc-caption">Scroll to assemble the bot</p>
+
+          <noscript>
+            <div class="noscript-fallback">
+              <img src="assets/frames/frame_120.jpg" alt="Assembled Agri-Pal robot" />
+              <span>Enable JavaScript to see the assembly animation. Here is the finished build.</span>
+            </div>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3 · CAPABILITIES (pinned, scroll-driven) ============ -->
+    <section id="capabilities" class="cap-track-section">
+      <div class="cap-stage" id="cap-stage">
+        <div class="cap-wire reveal" aria-hidden="true">
+          <svg class="doodle aster" viewBox="0 0 60 60" fill="none">
+            <path d="M30 2v56M2 30h56M10 10l40 40M50 10L10 50" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <svg viewBox="0 0 300 340" fill="none" stroke="#0d1014" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="150" cy="40" r="22" />
+            <path d="M150 62v34" />
+            <rect x="104" y="96" width="92" height="44" rx="10" />
+            <path d="M104 118h-14v92h26M196 118h14v92h-26" />
+            <circle cx="76" cy="234" r="26" />
+            <circle cx="224" cy="234" r="26" />
+            <path d="M150 140v96" />
+            <rect x="96" y="236" width="54" height="28" rx="8" />
+            <rect x="150" y="236" width="54" height="28" rx="8" />
+            <path d="M150 264c-10 34-34 48-62 56M150 264c10 34 34 48 62 56" opacity=".45" />
+          </svg>
+        </div>
+
+        <div class="cap-content reveal">
+          <div class="cap-labels" id="cap-labels">
+            <div class="cap-label lit" id="cap-navigate">
+              <span class="num">01</span>
+              <h3>Navigate</h3>
+            </div>
+            <div class="cap-label" id="cap-detect">
+              <span class="num">02</span>
+              <h3>Detect</h3>
+            </div>
+            <div class="cap-label" id="cap-harvest">
+              <span class="num">03</span>
+              <h3>Harvest</h3>
+            </div>
+          </div>
+          <p class="cap-tag">You focus on the field. It handles the row.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4 · DARK FLIP — LIVE STATUS / SPECS ============ -->
+    <section id="live" class="section dark-flip">
+      <p class="flip-eyebrow">— System / Live status</p>
+
+      <div class="wire-model reveal">
+        <div class="wire-rotate" id="wire-rotate" role="img" aria-label="Interactive Agri-Pal wireframe — drag to rotate">
+          <svg viewBox="0 0 300 340" fill="none" stroke="#9aa4b2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="150" cy="40" r="22" stroke="#3ddc84" />
+            <path d="M150 62v34" />
+            <rect x="104" y="96" width="92" height="44" rx="10" stroke="#eef1f5" />
+            <path d="M104 118h-14v92h26M196 118h14v92h-26" />
+            <circle cx="76" cy="234" r="26" />
+            <circle cx="224" cy="234" r="26" />
+            <path d="M150 140v96" />
+            <rect x="96" y="236" width="54" height="28" rx="8" />
+            <rect x="150" y="236" width="54" height="28" rx="8" />
+            <path d="M150 264c-10 34-34 48-62 56M150 264c10 34 34 48 62 56" opacity=".35" />
+          </svg>
+        </div>
+        <p class="tele-caption">Live telemetry</p>
+      </div>
+
+      <div class="flip-content reveal">
+        <h2 class="flip-head">Built to work the row, <span class="glow">on its own.</span></h2>
+        <div class="flip-body">
+          <p>Agri-Pal drives the crop row with an IR line-following PID loop, watches for anything in its path with ultrasonic ranging, and reaches out to pluck ripe produce into its payload.</p>
+          <p>Telemetry below is pulled straight from the on-board controller over the local API.</p>
+        </div>
+
+        <div class="stat-rows" id="stat-rows">
+          <div class="stat-row">
+            <span class="stat-label"><span class="live-dot" aria-hidden="true"></span>Battery</span>
+            <span class="stat-value pulse" id="row-battery">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label"><span class="live-dot" aria-hidden="true"></span>Mode</span>
+            <span class="stat-value" id="row-mode">Standby</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label"><span class="live-dot" aria-hidden="true"></span>Last obstacle</span>
+            <span class="stat-value" id="row-obstacle">None</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label"><span class="live-dot" aria-hidden="true"></span>Items plucked</span>
+            <span class="stat-value pulse" id="row-plucked">0</span>
+          </div>
+        </div>
+
+        <div class="flip-cta">
+          <a class="btn btn-accent btn-arrow" href="#specs" data-modal="specs">
+            Explore full specs
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="btn btn-dark" href="live-status.html">Open live dashboard</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 5 · FOOTER ============ -->
+  <footer class="footer-site">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul class="footer-links">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#" data-modal="components">Components</a></li>
+          <li><a href="#specs" data-modal="specs">Specs</a></li>
+          <li><a href="live-status.html">Live Status</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="team.html">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <ul class="footer-links">
+          <li><a href="#capabilities">Navigate</a></li>
+          <li><a href="#capabilities">Detect</a></li>
+          <li><a href="#capabilities">Harvest</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p class="footer-contact">Questions or collaboration?<br /><a href="mailto:hello@agripal.xyz">hello@agripal.xyz</a></p>
+        <div class="footer-pills">
+          <a class="pill" href="#" aria-label="GitHub repository">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+            GitHub
+          </a>
+          <a class="pill" href="#" aria-label="Demo video">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5v-7z"/></svg>
+            Demo video
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-wordmark" aria-hidden="true">Agri-Pal</div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Agri-Pal · Autonomous Crop Harvesting Robot</span>
+      <span>College project — built with HTML, CSS &amp; vanilla JS + a Java Spring Boot backend.</span>
+    </div>
+  </footer>
+
+  <div id="modal-root"></div>
+
+  <script src="ui.js"></script>
+  <script src="script.js"></script>
+  <script src="particles.js"></script>
+</body>
+</html>

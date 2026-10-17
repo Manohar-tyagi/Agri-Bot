@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works — Agri-Pal</title>
+  <meta name="description" content="How the Agri-Pal field robot works in one cycle: follow the row with IR line sensors, detect and avoid obstacles with ultrasound, then identify and pluck ripe produce." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="top" data-page="how-it-works">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVBAR: floating pill ============ -->
+  <header class="site-nav" id="site-nav">
+    <a class="nav-logo" href="index.html">
+      <svg class="nav-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="12" />
+        <circle cx="16" cy="16" r="5" fill="#0d1014" />
+      </svg>
+      <span class="nav-name">Agri-Pal</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html" data-modal="components">Components</a>
+      <a href="index.html" data-modal="specs">Specs</a>
+      <a href="live-status.html">Live Status</a>
+    </nav>
+    <a class="nav-cta" href="mailto:hello@agripal.xyz">Get in touch</a>
+    <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="main" class="page-main">
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section id="how-it-works" class="section how-section">
+      <div class="section-head reveal">
+        <h2 class="section-title">How It <span class="accent">Works</span></h2>
+        <p class="section-sub">One working cycle, three simple jobs.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step card reveal">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l14 14M5 19L19 5"/><path d="M4 12h3l2-3 3 3 2-2 2 2h4"/></svg>
+          </div>
+          <h3>1 · Follow the row</h3>
+          <p>IR sensors track the guide line and the PID loop keeps the bot perfectly centred between the crops.</p>
+        </div>
+        <div class="step-arrow reveal" aria-hidden="true">→</div>
+        <div class="step card reveal">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>2 · Detect &amp; avoid obstacles</h3>
+          <p>The ultrasonic sensor scans ahead. If something crosses the safety threshold, the bot halts, reroutes or calls for help.</p>
+        </div>
+        <div class="step-arrow reveal" aria-hidden="true">→</div>
+        <div class="step card reveal">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12l4 4 8-8M5 20h14"/></svg>
+          </div>
+          <h3>3 · Identify &amp; pluck produce</h3>
+          <p>The servo gripper arm extends, identifies ripe fruit (optionally via camera vision) and plucks it into the payload.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><a href="index.html">Home</a> · <a href="live-status.html">Live Status</a> · <a href="team.html">Team</a></p>
+    <p>Agri-Pal · Autonomous Crop Harvesting Robot</p>
+    <p class="footer-small">College project demo — built with HTML, CSS &amp; vanilla JavaScript + a Java Spring Boot backend.</p>
+  </footer>
+
+  <div id="modal-root"></div>
+
+  <script src="ui.js"></script>
+  <script src="particles.js"></script>
+</body>
+</html>
